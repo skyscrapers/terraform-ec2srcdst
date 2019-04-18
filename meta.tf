@@ -5,7 +5,7 @@ locals {
 }
 
 data "aws_autoscaling_group" "targets" {
-  count = "${length(var.autoscaling_group_names)}"
+  count = "${var.autoscaling_group_count}"
   name  = "${var.autoscaling_group_names[count.index]}"
 }
 

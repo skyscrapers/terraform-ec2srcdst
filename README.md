@@ -18,6 +18,7 @@ This module will create the following:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| autoscaling\_group\_count | The number of autoscaling group names provided in `var.autoscaling_group_names` | string | n/a | yes |
 | autoscaling\_group\_names | List of autoscaling group names to attach the lambda function to | list | n/a | yes |
 | lambda\_log\_retention\_in\_days | Specifies the number of days you want to retain log events in the lambda function log group | string | `"30"` | no |
 | tags | Map with additional tags to add to created resources | map | `<map>` | no |
