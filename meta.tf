@@ -4,13 +4,12 @@ locals {
   tags              = "${var.tags}"
 }
 
-data "aws_autoscaling_group" "targets" {
-  count = "${var.autoscaling_group_count}"
-  name  = "${var.autoscaling_group_names[count.index]}"
-}
-
 resource "random_string" "name" {
   length  = 16
   special = false
   upper   = false
 }
+
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}

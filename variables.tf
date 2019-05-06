@@ -3,10 +3,6 @@ variable "autoscaling_group_names" {
   type        = "list"
 }
 
-variable "autoscaling_group_count" {
-  description = "The number of autoscaling group names provided in `var.autoscaling_group_names`"
-}
-
 variable "tags" {
   description = "Map with additional tags to add to created resources"
   type        = "map"

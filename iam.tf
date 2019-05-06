@@ -35,7 +35,7 @@ data "aws_iam_policy_document" "lambda" {
     ]
 
     resources = [
-      "${data.aws_autoscaling_group.targets.*.arn}",
+      "${formatlist("arn:aws:autoscaling:%s:%s:autoScalingGroup:*:autoScalingGroupName/%s", data.aws_region.current.name, data.aws_caller_identity.current.account_id, coalescelist(var.autoscaling_group_names, list("*")))}",
     ]
   }
 
